@@ -1,0 +1,4 @@
+<FilesMatch "\.(?:inc|env)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
