@@ -1,0 +1,52 @@
+<!-- csv_table.html -->
+<!DOCTYPE html>
+<html lang="en">
+    {% extends "layout/base.html" %}
+    {% load static %}
+    {% block content %}
+    <div class="d-flex">
+        {% include "layout/sidebar.html" %}
+        <div class="w-100">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+<div class="container mt-4">
+    <h2>Past Sentiment</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    {% if csv_data %}
+                        {% for key in csv_data.0.keys %}
+                            <th>{{ key }}</th>
+                        {% endfor %}
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% if csv_data %}
+                    {% for row in csv_data %}
+                        <tr>
+                            {% for value in row.values %}
+                                <td>{{ value }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="5">No data available</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+    </body>
+</div>
+</div>
+    </div>
+{% endblock content %}
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends "layout/base.html" %}
+    {% load static %}
+    {% block content %}
+    <div class="d-flex">
+        {% include "layout/sidebar.html" %}
+        <div class="w-100">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Upload CSV and Analyze</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            display: flex;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .content h1 {
+            color: #333;
+        }
+        .content form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .content form p {
+            margin: 0;
+        }
+        .content form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .content form button:hover {
+            background-color: #45a049;
+        }
+        .content h2 {
+            color: #333;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Upload CSV and Analyze Sentiment</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+
+        {% if image_base64 %}
+            <h2>Sentiment Distribution</h2>
+            <img src="data:image/png;base64,{{ image_base64 }}" alt="Sentiment Pie Chart">
+        {% endif %}
+    </div>
+</body>
+</div>
+</div>
+    </div>
+{% endblock content %}
+</html>

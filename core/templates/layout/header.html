@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Search Bar</title>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS styles */
+        body {
+            margin: 0; /* Remove default margin */
+        }
+        header {
+            color: #fff; /* Text color */
+            padding: 10px 0; /* Padding top and bottom, no left and right */
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+       .container {
+            display: flex;
+            justify-content: center; /* Center the search form horizontally */
+            align-items: center; /* Align items vertically */
+        }
+
+       .search-form {
+            display: flex;
+            align-items: center; /* Align input and icon vertically */
+            width: 100%; /* Make the form full-width */
+        }
+
+       .form-control {
+            width: 100%; /* Make the input full-width */
+            padding: 1px; /* Increase padding for a thinner input */
+            font-size: 14px; /* Adjust font size */
+            border: none; /* Remove border */
+            border-radius: 4px; /* Border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+       .search-icon {
+            color: #000; /* Black icon color */
+            cursor: pointer; /* Change cursor on hover */
+            margin-left: 10px; /* Add some margin between the input and icon */
+        }
+
+       .search-icon:hover {
+            color: #333; /* Icon color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <form class="search-form" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                <i class="fas fa-search search-icon"></i>
+            </form>
+        </div>
+    </header>
+</body>
+</html>

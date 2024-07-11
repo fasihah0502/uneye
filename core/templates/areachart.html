@@ -1,0 +1,12 @@
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% block content %}
+        <!--datatable-->
+    <div class="col-lg">
+        <h3 class="text-center">--------</h3>
+        <table id="data-table"></table>
+    </div>
+{% endblock content %}
+{% block scripts %}
+<script src="{% static 'assets/js/carta.js' %}"></script>
+{% endblock scripts %}
